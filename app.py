@@ -4,7 +4,6 @@ import numpy as np
 import gradio as gr
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 
-# 🔹 Change this to your actual Hugging Face model repo ID
 MODEL_ID = "SharvNey/capstone_project"
 
 # Load model & tokenizer
@@ -41,8 +40,6 @@ if __name__ == "__main__":
     in_spaces = os.environ.get("SYSTEM") == "spaces"
 
     if in_spaces:
-        # Spaces handles public link, no share=True needed
         demo.launch(server_name="0.0.0.0", server_port=7860)
     else:
-        # Local/Colab → provide share=True for public link
         demo.launch(share=True)
